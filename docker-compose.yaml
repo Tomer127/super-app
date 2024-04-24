@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  mysql:
+    image: mysql:8.0.28
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: super-app
+    ports:
+       - "3306:3306"
+      
+  node:
+    image: nodeapp:latest
+    # command: sleep 99999999
+    ports:
+      - "3000:3000"
+  php:
+    image: phpapp:latest
+    # command: sleep 999999
+    ports:
+    - "80:80"
