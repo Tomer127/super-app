@@ -10,11 +10,9 @@ services:
       
   node:
     image: nodeapp:latest
-    # command: sleep 99999999
     ports:
       - "3000:3000"
   php:
     image: phpapp:latest
-    # command: sleep 999999
     ports:
     - "80:80"
