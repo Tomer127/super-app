@@ -22,7 +22,7 @@ jobs:
       #     password: ${{ secrets.DOCKERHUB_PASSWORD }}
   
       - name: build docker image node
-        run:  docker build . --file Dockerfile --tag super-app:${{ github.run_number }}-${{ github.sha }}
+        run:  docker build  --file Dockerfile --tag super-app/node:${{ github.run_number }}-${{ github.sha }}
       
       # - name: Push Docker image to Docker Hub
       #   run: |
