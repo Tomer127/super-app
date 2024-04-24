@@ -26,5 +26,8 @@ jobs:
         run: docker login -u ${{ secrets.DOCKERHUB_USER }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
 
       - name: Push Docker node image to Docker Hub
-        run: docker push -a tomershafran1/super-app:${{ github.run_number }}-${{ github.sha }}
+        run: docker push  tomershafran1/super-app:node-${{ github.run_number }}-${{ github.sha }}
+
+      - name: Push Docker php image to Docker Hub
+        run: docker push  tomershafran1/super-app:php-${{ github.run_number }}-${{ github.sha }}
 
