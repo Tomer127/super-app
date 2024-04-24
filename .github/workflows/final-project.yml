@@ -16,18 +16,18 @@ jobs:
         uses: actions/checkout@v4
   
       - name: build docker image node
-        run:  docker buildx  build --file super-app/node/Dockerfile --tag super-app/node:${{ github.run_number }}-${{ github.sha }}
+        run:  docker   build --file node/Dockerfile --tag super-app/node:${{ github.run_number }}-${{ github.sha }}
 
       - name: build docker image php
-        run:  docker buildx  build --file super-app/node/Dockerfile --tag super-app/node:${{ github.run_number }}-${{ github.sha }}
+        run:  docker   build --file php/Dockerfile --tag super-app/php:${{ github.run_number }}-${{ github.sha }}
 
-      - name: Login to Docker Hub
-        run: docker login -u ${{ secrets.DOCKERHUB_USER }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
+      # - name: Login to Docker Hub
+      #   run: docker login -u ${{ secrets.DOCKERHUB_USER }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
 
-      - name: Push Docker node image to Docker Hub
-        run: |
-          docker push Tomer127/super-app: ${{ github.run_number }}-${{ github.sha }}
+      # - name: Push Docker node image to Docker Hub
+      #   run: |
+      #     docker push Tomer127/super-app: ${{ github.run_number }}-${{ github.sha }}
 
-      - name: Push Docker php image to Docker Hub
-        run: |
-          docker push Tomer127/super-app: ${{ github.run_number }}-${{ github.sha }}
+      # - name: Push Docker php image to Docker Hub
+      #   run: |
+      #     docker push Tomer127/super-app: ${{ github.run_number }}-${{ github.sha }}
