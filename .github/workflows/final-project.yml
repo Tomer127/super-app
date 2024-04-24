@@ -2,8 +2,10 @@ name: Checkout Build and Push Docker Image
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
 
