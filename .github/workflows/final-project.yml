@@ -27,8 +27,8 @@ jobs:
 
       - name: Push Docker node image to Docker Hub
         run: |
-          docker push node tomershafran1/super-app: ${{ github.run_number }}-${{ github.sha }}
+          docker push  tomershafran1/super-app: ${{ github.run_number }}-${{ github.sha }}
 
-      - name: Push Docker php image to Docker Hub
-        run: |
-          docker push php tomershafran1/super-app: ${{ github.run_number }}-${{ github.sha }}
+      # - name: Push Docker php image to Docker Hub
+      #   run: |
+      #     docker push php tomershafran1/super-app: ${{ github.run_number }}-${{ github.sha }}
